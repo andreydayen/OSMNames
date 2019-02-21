@@ -15,17 +15,18 @@ BEGIN
   IF name = '' IS NOT FALSE THEN
     SELECT COALESCE(
                   all_tags -> 'name',
-                  all_tags -> 'name:fr',
+				  all_tags -> 'name:en',
+                  all_tags -> 'name:ru',
+                  all_tags -> 'name:uk',
+				  all_tags -> 'name:fr',
                   all_tags -> 'name:de',
                   all_tags -> 'name:es',
-                  all_tags -> 'name:ru',
                   all_tags -> 'name:zh',
-                  alternative_names[1])
       INTO name;
   END IF;
   name := regexp_replace(name, E'\\s+', ' ', 'g');
 
-  alternative_names := array_remove(alternative_names, name);
+  -- alternative_names := array_remove(alternative_names, name);
   alternative_names_string := array_to_string(alternative_names, ',');
   alternative_names_string := regexp_replace(alternative_names_string, E'\\s+', ' ', 'g');
 
