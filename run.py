@@ -9,6 +9,7 @@ from osmnames.import_wikipedia.import_wikipedia import import_wikipedia
 from osmnames.import_osm.import_osm import import_osm
 from osmnames.prepare_data.prepare_data import prepare_data
 from osmnames.export_osmnames.export_osmnames import export_osmnames
+from osmnames.prepare_data.prepare_data import create_tables_backup
 
 
 wait_for_database()
