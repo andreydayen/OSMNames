@@ -20,6 +20,7 @@ profiler.enable()
 init_database()
 import_wikipedia()
 import_osm()
+create_tables_backup()
 prepare_data()
 export_osmnames()
 
